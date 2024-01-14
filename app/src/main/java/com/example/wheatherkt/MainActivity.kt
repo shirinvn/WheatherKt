@@ -1,8 +1,8 @@
 package com.example.wheatherkt
 
 
-
 import android.Manifest
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -20,6 +20,7 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.core.view.WindowCompat
 import androidx.databinding.DataBindingUtil
 import com.example.wheatherkt.databinding.ActivityMainBinding
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -46,6 +47,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_main)
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
@@ -293,6 +295,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+    @SuppressLint("SimpleDateFormat")
     @RequiresApi(Build.VERSION_CODES.O)
     private fun setData(body:WeatherModelData){
 
@@ -378,16 +381,9 @@ class MainActivity : AppCompatActivity() {
 
                     mainLayout.background= ContextCompat
                         .getDrawable(this@MainActivity, R.drawable.thunderstrom_bg)
-                    window.statusBarColor = ContextCompat.getColor(this@MainActivity,R.color.thunderstorm)
+                    window.statusBarColor = ContextCompat.getColor(this@MainActivity,R.color.white)
 
-                    card1.setBackgroundResource(R.drawable.thunderstrom_bg2)
-                    card2.setBackgroundResource(R.drawable.thunderstrom_bg2)
-                    card3.setBackgroundResource(R.drawable.thunderstrom_bg2)
-                    card4.setBackgroundResource(R.drawable.thunderstrom_bg2)
-                    card5.setBackgroundResource(R.drawable.thunderstrom_bg2)
-                    card6.setBackgroundResource(R.drawable.thunderstrom_bg2)
-                    card7.setBackgroundResource(R.drawable.thunderstrom_bg2)
-                    card8.setBackgroundResource(R.drawable.thunderstrom_bg2)
+
 
 
                 }
@@ -401,16 +397,9 @@ class MainActivity : AppCompatActivity() {
                         .getDrawable(this@MainActivity, R.drawable.drizzle_bg)
 
 
-                    window.statusBarColor= ContextCompat.getColor(this@MainActivity, R.color.drizzle)
+                    window.statusBarColor= ContextCompat.getColor(this@MainActivity, R.color.white)
 
-                    card1.setBackgroundResource(R.drawable.drizzle_bg2)
-                    card2.setBackgroundResource(R.drawable.drizzle_bg2)
-                    card3.setBackgroundResource(R.drawable.drizzle_bg2)
-                    card4.setBackgroundResource(R.drawable.drizzle_bg2)
-                    card5.setBackgroundResource(R.drawable.drizzle_bg2)
-                    card6.setBackgroundResource(R.drawable.drizzle_bg2)
-                    card7.setBackgroundResource(R.drawable.drizzle_bg2)
-                    card8.setBackgroundResource(R.drawable.drizzle_bg2)
+
 
                 }
 
@@ -420,17 +409,8 @@ class MainActivity : AppCompatActivity() {
                     weatherImg.setImageResource(R.drawable.ic_rainy_weather)
 
                     mainLayout.background= ContextCompat
-                        .getDrawable(this@MainActivity, R.drawable.rain_bg)
-                    window.statusBarColor= ContextCompat.getColor(this@MainActivity,R.color.rain)
-
-                    card1.setBackgroundResource(R.drawable.rain_bg2)
-                    card2.setBackgroundResource(R.drawable.rain_bg2)
-                    card3.setBackgroundResource(R.drawable.rain_bg2)
-                    card4.setBackgroundResource(R.drawable.rain_bg2)
-                    card5.setBackgroundResource(R.drawable.rain_bg2)
-                    card6.setBackgroundResource(R.drawable.rain_bg2)
-                    card7.setBackgroundResource(R.drawable.rain_bg2)
-                    card8.setBackgroundResource(R.drawable.rain_bg2)
+                        .getDrawable(this@MainActivity, R.drawable.rain)
+                    window.statusBarColor= ContextCompat.getColor(this@MainActivity,R.color.white)
 
                 }
 
@@ -440,18 +420,9 @@ class MainActivity : AppCompatActivity() {
                     weatherImg.setImageResource(R.drawable.ic_snow_weather)
 
                     mainLayout.background= ContextCompat
-                        .getDrawable(this@MainActivity, R.drawable.snow_bg)
+                        .getDrawable(this@MainActivity, R.drawable.snow)
 
-                    window.statusBarColor =ContextCompat.getColor(this@MainActivity, R.color.snow)
-
-                    card1.setBackgroundResource(R.drawable.snow_bg2)
-                    card2.setBackgroundResource(R.drawable.snow_bg2)
-                    card3.setBackgroundResource(R.drawable.snow_bg2)
-                    card4.setBackgroundResource(R.drawable.snow_bg2)
-                    card5.setBackgroundResource(R.drawable.snow_bg2)
-                    card6.setBackgroundResource(R.drawable.snow_bg2)
-                    card7.setBackgroundResource(R.drawable.snow_bg2)
-                    card8.setBackgroundResource(R.drawable.snow_bg2)
+                    window.statusBarColor =ContextCompat.getColor(this@MainActivity, R.color.white)
 
                 }
 
@@ -461,18 +432,8 @@ class MainActivity : AppCompatActivity() {
                     weatherImg.setImageResource(R.drawable.ic_broken_clouds)
 
                     mainLayout.background= ContextCompat
-                        .getDrawable(this@MainActivity, R.drawable.atmosphere_bg)
-                    window.statusBarColor= ContextCompat.getColor(this@MainActivity,R.color.atmosphere)
-
-                    card1.setBackgroundResource(R.drawable.atmosphere_bg2)
-                    card2.setBackgroundResource(R.drawable.atmosphere_bg2)
-                    card3.setBackgroundResource(R.drawable.atmosphere_bg2)
-                    card4.setBackgroundResource(R.drawable.atmosphere_bg2)
-                    card5.setBackgroundResource(R.drawable.atmosphere_bg2)
-                    card6.setBackgroundResource(R.drawable.atmosphere_bg2)
-                    card7.setBackgroundResource(R.drawable.atmosphere_bg2)
-                    card8.setBackgroundResource(R.drawable.atmosphere_bg2)
-
+                        .getDrawable(this@MainActivity, R.drawable.cloudy)
+                    window.statusBarColor= ContextCompat.getColor(this@MainActivity,R.color.white)
 
                 }
 
@@ -482,36 +443,21 @@ class MainActivity : AppCompatActivity() {
                     weatherImg.setImageResource(R.drawable.ic_clear_day)
 
                     mainLayout.background= ContextCompat
-                        .getDrawable(this@MainActivity, R.drawable.clear_bg)
+                        .getDrawable(this@MainActivity, R.drawable.clear)
 
-                    window.statusBarColor=ContextCompat.getColor(this@MainActivity, R.color.clear)
+                    window.statusBarColor=ContextCompat.getColor(this@MainActivity, R.color.white)
 
-                    card1.setBackgroundResource(R.drawable.clear_bg1)
-                    card2.setBackgroundResource(R.drawable.clear_bg1)
-                    card3.setBackgroundResource(R.drawable.clear_bg1)
-                    card4.setBackgroundResource(R.drawable.clear_bg1)
-                    card5.setBackgroundResource(R.drawable.clear_bg1)
-                    card6.setBackgroundResource(R.drawable.clear_bg1)
-                    card7.setBackgroundResource(R.drawable.clear_bg1)
-                    card8.setBackgroundResource(R.drawable.clear_bg1)
                 }
 
                 //Clouds
                 in 801..804 -> {
 
-                    weatherImg.setImageResource(R.drawable.ic_cloudy_weather)
+                    weatherImg.setImageResource(R.drawable.ic_cloudy)
 
                     mainLayout.background= ContextCompat
-                        .getDrawable(this@MainActivity, R.drawable.clouds_bg)
-                    window.statusBarColor=ContextCompat.getColor(this@MainActivity, R.color.clouds)
-                    card1.setBackgroundResource(R.drawable.clouds_bg2)
-                    card2.setBackgroundResource(R.drawable.clouds_bg2)
-                    card3.setBackgroundResource(R.drawable.clouds_bg2)
-                    card4.setBackgroundResource(R.drawable.clouds_bg2)
-                    card5.setBackgroundResource(R.drawable.clouds_bg2)
-                    card6.setBackgroundResource(R.drawable.clouds_bg2)
-                    card7.setBackgroundResource(R.drawable.clouds_bg2)
-                    card8.setBackgroundResource(R.drawable.clouds_bg2)
+                        .getDrawable(this@MainActivity, R.drawable.cloudyy)
+                    window.statusBarColor=ContextCompat.getColor(this@MainActivity, R.color.white)
+
 
                 }
 
@@ -521,18 +467,11 @@ class MainActivity : AppCompatActivity() {
                     weatherImg.setImageResource(R.drawable.ic_unknown)
 
                     mainLayout.background= ContextCompat
-                        .getDrawable(this@MainActivity, R.drawable.unknown_bg)
+                        .getDrawable(this@MainActivity, R.drawable.unknownbac)
 
                     window.statusBarColor=ContextCompat.getColor(this@MainActivity,R.color.white)
 
-                    card1.setBackgroundResource(R.drawable.unknown_bg2)
-                    card2.setBackgroundResource(R.drawable.unknown_bg2)
-                    card3.setBackgroundResource(R.drawable.unknown_bg2)
-                    card4.setBackgroundResource(R.drawable.unknown_bg2)
-                    card5.setBackgroundResource(R.drawable.unknown_bg2)
-                    card6.setBackgroundResource(R.drawable.unknown_bg2)
-                    card7.setBackgroundResource(R.drawable.unknown_bg2)
-                    card8.setBackgroundResource(R.drawable.unknown_bg2)
+
 
                 }
 
@@ -553,3 +492,4 @@ class MainActivity : AppCompatActivity() {
 
 
 }
+

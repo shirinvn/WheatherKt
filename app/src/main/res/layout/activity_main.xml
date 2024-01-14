@@ -9,183 +9,205 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/root_layout"
         android:layout_width="match_parent"
-        android:background="@color/white"
         android:layout_height="match_parent"
         tools:context=".Activities.MainActivity">
 
-
-        <FrameLayout
-            android:id="@+id/main_layout"
+        <LinearLayout
+            android:id="@+id/app_bar_layout"
             android:layout_width="match_parent"
-            android:layout_height="500dp"
-            android:background="@drawable/card"
-            android:orientation="vertical"
-            android:layout_marginBottom="4dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:background="@color/transparent"
+            android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
 
+            <EditText
+                android:id="@+id/city_search"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_search"
+                android:drawableStart="@drawable/ic_round_search_24"
+                android:drawableTint="@color/white"
+                android:hint="Search here..."
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:padding="10dp"
+                android:textColor="@color/white"
+                android:textSize="15dp">
+
+            </EditText>
+
+
+            <ImageView
+                android:id="@+id/current_location"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginEnd="10dp"
+                android:background="?selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/my_loc">
+
+
+            </ImageView>
+
+
+        </LinearLayout>
+
+
+        <FrameLayout
+            android:id="@+id/frame1"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_marginTop="80dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cardBackgroundColor="@color/black"
+                app:cardCornerRadius="80dp">
+
+                <ImageView
+                    android:id="@+id/main_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/appicon" />
+            </androidx.cardview.widget.CardView>
+
+
+
+
+        </FrameLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="68dp"
+            android:layout_marginTop="31dp"
+            android:layout_marginEnd="42dp"
+            android:layout_marginBottom="27dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/main_layout2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frame1">
+
 
             <LinearLayout
-                android:id="@+id/app_bar_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="125dp"
+                android:layout_gravity="center"
                 android:gravity="center"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                >
 
-
-                <EditText
-                    android:id="@+id/city_search"
-                    android:layout_width="0dp"
-                    android:layout_height="50dp"
-                    android:layout_margin="10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/rounded_search"
-                    android:drawableStart="@drawable/ic_round_search_24"
-                    android:drawablePadding="20dp"
-                    android:drawableTint="@color/black"
-                    android:hint="Search here..."
-                    android:imeOptions="actionSearch"
-                    android:inputType="text"
-                    android:padding="10dp"
-                    android:textSize="15dp"
-                    android:textColor="@color/black">
-
-                </EditText>
 
 
                 <ImageView
-                    android:id="@+id/current_location"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_marginEnd="10dp"
-                    android:background="?selectableItemBackgroundBorderless"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:src="@drawable/my_loc">
-
-
-                </ImageView>
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="bottom"
-                android:gravity="bottom"
-                android:orientation="vertical">
-
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:orientation="vertical"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <ImageView
-                        android:id="@+id/weather_img"
-                        android:layout_width="135dp"
-                        android:layout_height="135dp"
-                        android:layout_gravity="center_vertical"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/ic_launcher_foreground"/>
-
-
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="25dp"
-                    android:gravity="center"
-                    >
-
-                    <TextView
-                        android:id="@+id/temp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="12"
-                        android:textColor="@color/white"
-                        android:textSize="105sp"/>
-
-                    <TextView
-                        android:id="@+id/weather_title"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:text="Weather"
-                        android:textSize="28dp"
-                        android:textColor="@color/white"
-                        />
-
-                </LinearLayout>
-
-
+                    android:id="@+id/weatherImg"
+                    android:layout_width="56dp"
+                    android:layout_height="66dp"
+                    android:background="@drawable/appicon" />
 
                 <TextView
 
                     android:id="@+id/date_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
                     android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
                     android:text="Time"
-                    android:textColor="@color/white"
-                    android:textSize="20dp">
+                    android:textColor="@color/black"
+                    android:textSize="20dp"/>
 
-                </TextView>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:gravity="center"
+                android:padding="5dp">
 
-                <LinearLayout
-                    android:layout_marginBottom="25dp"
-                    android:layout_width="match_parent"
+
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="125dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                >
+
+                <TextView
+                    android:id="@+id/temp"
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    android:text="12"
+                    android:textColor="@color/black"
+                    android:textSize="50sp" />
+
+                <TextView
+                    android:id="@+id/weather_title"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:padding="5dp">
-
-                    <TextView
-                        android:id="@+id/min_temp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="25dp"
-                        android:text="Min Temp"
-                        android:textSize="18dp"
-                        android:textColor="@color/white">
-
-                    </TextView>
-
-                    <TextView
-                        android:textSize="18dp"
-                        android:id="@+id/max_temp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="25dp"
-                        android:text="Max Temp"
-                        android:textColor="@color/white">
-
-                    </TextView>
-
-
-                </LinearLayout>
+                    android:layout_margin="5dp"
+                    android:text="Weather"
+                    android:textColor="@color/black"
+                    android:textSize="28dp" />
 
             </LinearLayout>
 
 
-        </FrameLayout>
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="125dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                >
+
+
+                <TextView
+                    android:id="@+id/min_temp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Min Temp"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"/>
+
+
+                <TextView
+                    android:id="@+id/max_temp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Max Temp"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"/>
+            </LinearLayout>
+        </LinearLayout>
 
         <FrameLayout
             android:id="@+id/main_layout2"
